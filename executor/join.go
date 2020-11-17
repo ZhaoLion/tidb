@@ -359,7 +359,7 @@ func (e *HashJoinExec) handleJoinWorkerPanic(r interface{}) {
 	e.joinWorkerWaitGroup.Done()
 }
 
-// Concurrently handling unmatched rows from the hash table
+// handleUnmatchedRowsFromHashTable Concurrently handling unmatched rows from the hash table
 func (e *HashJoinExec) handleUnmatchedRowsFromHashTable(workerID uint) {
 	ok, joinResult := e.getNewJoinResult(workerID)
 	if !ok {
